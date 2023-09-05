@@ -1,0 +1,97 @@
+:root {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  background-color: #323c4b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  width: 550px;
+  margin: 0;
+  display: inline-block;
+  color: #e7657f;
+}
+
+.set-time {
+  display: inline-block;
+  width: 30%;
+  margin: 250px 50px 20px;
+  text-align: center;
+  overflow: hidden;
+  color: #e7657f;
+}
+
+.butt-size {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin: 10px 0px;
+  font-size: 30px;
+  border: none;
+}
+
+.butt-size.b:hover {
+  color: #e7657f;
+}
+
+#session-label,
+#break-label {
+  font-size: 24px;
+  margin: 20px 0px;
+  text-shadow: black 2px 0 10px;
+}
+
+i {
+  font-size: 25px;
+}
+
+.session-container {
+  width: 60%;
+  display: flexbox;
+  justify-content: center;
+  text-align: center;
+  margin: 15px auto;
+}
+
+#time-left {
+  font-size: 95px;
+  margin-bottom: 5px;
+}
+
+#controllers {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  margin: 20px auto;
+}
+
+.fa-solid.fa-play {
+  width: 25px;
+}
+
+#timer-label {
+  font-size: 50px;
+  margin: 20px;
+  text-shadow: black 1px 1px 10px;
+}
+
+button {
+  background: none;
+}
+
+button:hover {
+  color: #e7657f;
+}
