@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 
+
 function formatTimer(timeInSeconds) {
   const minutes = Math.floor((timeInSeconds / 60) % 61);
   const seconds = (timeInSeconds) % 60;
@@ -29,18 +30,24 @@ function App() {
             if (prevSeconds === 0) {
               if (itsSession) {
                 setItsSession(false);
+                let sound = document.getElementById('beep');
+                sound.play()
                 setMinTimer([breakLength < 10 ? `0${breakLength}` : breakLength, '00']);
                 setTimeOutActive(
                   setTimeout(() => {
+                    sound.pause()
                     setTimeOutActive(null);
                     setSeconds(breakLength * 60)
                   }, 5000)
                 );
               } else {
                 setItsSession(true);
+                let sound = document.getElementById('beep');
                 setMinTimer([sessionLength < 10 ? `0${sessionLength}` : sessionLength, '00']);
+                sound.play()
                 setTimeOutActive(
                   setTimeout(() => {
+                    sound.pause()
                     setTimeOutActive(null);
                     setSeconds(sessionLength * 60)
                   }, 5000)
@@ -151,6 +158,7 @@ function App() {
         <div id='time-left'
           style={ { color: seconds < 180 && itsRunning ? 'red' : 'inherit' } }>
           { `${minTimer[0]}:${minTimer[1]}` }</div>
+        <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
       </div >
       <div id="controllers">
         <button onClick={ () => handlePlay() } id="start_stop">
